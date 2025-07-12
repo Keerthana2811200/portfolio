@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keerthana | Web Developer & UI/UX Designer </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #000;
+      color: #fff;
+    }
+
+    a {
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 999;
+      background-color: #111;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: #FFD700;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links li a {
+      color: #fff;
+      font-size: 18px;
+      position: relative;
+    }
+
+    .nav-links li a:hover {
+      color: #FFD700;
+    }
+
+    .nav-links li a:hover::after,
+    .nav-links li a.active::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: #FFD700;
+      bottom: -5px;
+      left: 0;
+    }
+
+    .social-icons a {
+      margin-left: 1rem;
+      color: #FFD700;
+      font-size: 1.2rem;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .hamburger .line {
+      width: 25px;
+      height: 3px;
+      background-color: #FFD700;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 7rem 2rem 3rem;
+      min-height: 100vh;
+      gap: 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .hero-content {
+      flex: 1;
+      min-width: 300px;
+      max-width: 500px;
+      animation: fadeInLeft 1.5s ease;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+    }
+
+    .hero-content h1 span {
+      color: #FFD700;
+    }
+
+    .hero-content h2 {
+      margin-top: 1rem;
+      font-size: 2rem;
+    }
+
+    .hero-content .typing {
+      color: #FFD700;
+    }
+
+    .hero-content p {
+      margin-top: 1rem;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .download-btn {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #FFD700;
+      color: #000;
+      border-radius: 5px;
+      font-weight: 600;
+    }
+
+    .hero-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      animation: float 4s ease-in-out infinite;
+      min-width: 300px;
+      max-width: 300px; /* decreased max-width */
+    }
+
+    .profile-img {
+      width: 100%;
+      max-width: 250px; /* decreased image size */
+      height: auto;
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #FFD700;
+      box-shadow: 0 0 25px #FFD700;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      background-color: #111;
+    }
+
+    .footer-links a {
+      margin: 0 1rem;
+      color: #FFD700;
+    }
+
+    @keyframes fadeInLeft {
+      from { opacity: 0; transform: translateX(-50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links, .social-icons {
+        display: none;
+      }
+
+      .navbar.active .nav-links,
+      .navbar.active .social-icons {
+        display: flex;
+        flex-direction: column;
+        background-color: #111;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 1rem;
+        gap: 1rem;
+      }
+
+      .navbar.active .social-icons {
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 7rem;
+        gap: 2rem;
+      }
+
+      .hero-image {
+        order: -1; /* image on top */
+        margin-bottom: 1rem;
+      }
+
+      .hero-content {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Keerthana</div>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="skills.html">Skills</a></li>
+         <li><a href="project.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      
+      <div class="hamburger" id="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-image">
+        <img src="images/final.jpg" alt="Keerthana" class="profile-img">
+      </div>
+      <div class="hero-content">
+    
+        <h1 class="animated-text">Hey I'm <span>Keerthana</span></h1>
+        <h2 class="typing-text">I'm a <span class="typing"></span></h2>
+        <p>IT Student | Web Developer | AI Enthusiast<br>
+        I'm an Information Technology student at Kumaraguru College of Technology with a passion for web development, UI/UX design, and artificial intelligence. 
+        I enjoy learning new technologies and turning ideas into real-world solutions.</p>
+        <a href="D:\User\Downloads\keerthana resume.pdf" class="btn download-btn">Download CV</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2023 Keerthana. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navbar = document.querySelector('.navbar');
+
+    hamburger.addEventListener('click', () => {
+      navbar.classList.toggle('active');
+    });
+
+    const roles = ['Web Developer', 'UI/UX Designer', 'Creative Thinker'];
+    let i = 0;
+    let j = 0;
+    let currentRole = '';
+    let isDeleting = false;
+
+    function typeEffect() {
+      if (i < roles.length) {
+        if (!isDeleting && j <= roles[i].length) {
+          currentRole = roles[i].substring(0, j++);
+        }
+        if (isDeleting && j >= 0) {
+          currentRole = roles[i].substring(0, j--);
+        }
+
+        document.querySelector('.typing').textContent = currentRole;
+
+        if (!isDeleting && j === roles[i].length + 1) {
+          isDeleting = true;
+          setTimeout(typeEffect, 800);
+        } else if (isDeleting && j === 0) {
+          isDeleting = false;
+          i = (i + 1) % roles.length;
+          setTimeout(typeEffect, 400);
+        } else {
+          setTimeout(typeEffect, 150);
+        }
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', typeEffect);
+  </script>
+</body>
+</html>

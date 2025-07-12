@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills | Keerthana</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* General styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.navbar {
+  background-color: #111;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: bold;
+  color: #FFD700;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav-links li a {
+  font-size: 18px;
+  color: #fff;
+  position: relative;
+}
+
+.nav-links li a.active,
+.nav-links li a:hover {
+  color: #FFD700;
+}
+
+.nav-links li a.active::after,
+.nav-links li a:hover::after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: #FFD700;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+
+.social-icons a {
+  margin-left: 1rem;
+  color: #FFD700;
+  font-size: 1.2rem;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger .line {
+  width: 25px;
+  height: 3px;
+  background-color: #FFD700;
+}
+
+
+.section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+
+.section-title span {
+  color: #FFD700;
+}
+
+/* Skills Section */
+.skills-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 2rem;
+}
+
+.skills-category {
+  margin-bottom: 3rem;
+}
+
+.skills-category h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #FFD700;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.skill-item {
+  background-color: #1a1a1a;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.skill-item:hover {
+  transform: translateY(-5px);
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.progress-bar {
+  width: 100%;
+  background-color: #333;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 10px;
+}
+
+.progress {
+  height: 100%;
+  background-color: #FFD700;
+  width: 0%;
+  transition: width 1.5s ease-in-out;
+}
+
+
+/* Individual Skill Widths */
+.html { width: 95%; }
+.js { width: 85%; }
+.java { width: 80%; }
+.cpp { width: 75%; }
+.php { width: 80%; }
+.sql { width: 90%; }
+.mongo { width: 75%; }
+.uiux { width: 90%; }
+.figma { width: 85%; }
+.canva { width: 95%; }
+
+/* Soft Skills */
+.soft-skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.soft-skill-item {
+  background-color: #222;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+.soft-skill-item:hover {
+  background-color: #FFD700;
+  color: #000;
+}
+
+.soft-skill-item i {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Interests Section */
+.interests-section {
+  padding: 3rem 2rem;
+  background-color: #111;
+}
+
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.interest-item {
+  background-color: #1a1a1a;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.interest-item:hover {
+  transform: scale(1.05);
+}
+
+.interest-icon i {
+  font-size: 2rem;
+  color: #FFD700;
+  margin-bottom: 1rem;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #111;
+}
+
+.footer-links a {
+  color: #FFD700;
+  margin: 0 1rem;
+}
+
+/* Animation */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.animate-on-scroll.active {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.right-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+
+@media (max-width: 768px) {
+      .nav-links, .social-icons {
+        display: none;
+      }
+
+      .navbar.active .nav-links,
+      .navbar.active .social-icons {
+        display: flex;
+        flex-direction: column;
+        background-color: #111;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 1rem;
+        gap: 1rem;
+      }
+
+      .navbar.active .social-icons {
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+  .navbar .logo {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
+
+
+    </style>
+</head>
+<body>
+    <header>
+    <nav class="navbar">
+      <div class="logo">Keerthana</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="skills.html" class="active">Skills</a></li>
+         <li><a href="project.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+     
+      <div class="hamburger" id="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </nav>
+  </header>
+
+    <main>
+        <section class="skills-section">
+            <h2 class="section-title animate-on-scroll">My <span>Skills</span></h2>
+            <div class="skills-container">
+                <div class="skills-category">
+                    <h3>Technical Skills</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>HTML/CSS</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="progress-bar">
+                                 <div class="progress" data-width="95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>JavaScript</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="progress-bar">
+                                 <div class="progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Java</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="progress-bar">
+                                 <div class="progress" data-width="80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>C++</span>
+                                <span>70%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" data-width="75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>PHP</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="progress-bar">
+                                 <div class="progress" data-width="80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>SQL</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>MongoDB</span>
+                                <span>70%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" data-width="75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <h3>Design Skills</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>UI/UX Design</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="progress-bar">
+                                 <div class="progress" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Figma</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="progress-bar">
+                                 <div class="progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Canva</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="progress-bar">
+                                 <div class="progress" data-width="95%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <h3>Soft Skills</h3>
+                    <div class="skills-grid soft-skills">
+                        <div class="soft-skill-item">
+                            <i class="fas fa-comments"></i>
+                            <span>Communication</span>
+                        </div>
+                        <div class="soft-skill-item">
+                            <i class="fas fa-users"></i>
+                            <span>Team Management</span>
+                        </div>
+                        <div class="soft-skill-item">
+                            <i class="fas fa-lightbulb"></i>
+                            <span>Creativity</span>
+                        </div>
+                        <div class="soft-skill-item">
+                            <i class="fas fa-hands-helping"></i>
+                            <span>Team Work</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2023 Keerthana. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+  const animatedElements = document.querySelectorAll('.animate-on-scroll');
+  const progressBars = document.querySelectorAll('.progress');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        if (entry.target.classList.contains('progress')) {
+          const targetWidth = entry.target.getAttribute('data-width');
+          entry.target.style.width = targetWidth;
+        }
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  animatedElements.forEach(el => observer.observe(el));
+  progressBars.forEach(bar => observer.observe(bar));
+
+  // 🔥 Hamburger toggle functionality
+   const hamburger = document.getElementById('hamburger');
+    const navbar = document.querySelector('.navbar');
+
+    hamburger.addEventListener('click', () => {
+      navbar.classList.toggle('active');
+    });
+
+ 
+</script>
+
+</body>
+</html>

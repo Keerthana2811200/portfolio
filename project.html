@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Keerthana | Projects</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      body {
+  font-family: 'Poppins', sans-serif;
+}
+
+    }
+    :root {
+      --bg-dark: #121212;
+      --light-bg: #1e1e1e;
+      --yellow: #ffd700;
+      --yellow-dark: #ffc600;
+      --white: #ffffff;
+      --gray: #e0e0e0;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--white);
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    .navbar {
+      background:#1c1c1c;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+    top: 0;
+     z-index: 100;
+
+    }
+    .navbar .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: var(--yellow);
+    }
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+    .navbar ul li a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+    }
+    .navbar ul li a:hover,
+    .navbar ul li a.active {
+      color: var(--yellow);
+    }
+    .navbar ul li a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 0;
+      height: 2px;
+      background: var(--yellow);
+      transition: 0.3s ease;
+    }
+    .navbar ul li a:hover::after,
+    .navbar ul li a.active::after {
+      width: 100%;
+    }
+
+    /* Projects Section */
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin: 60px 0 30px;
+    }
+    .section-title span {
+      color: var(--yellow);
+    }
+    
+    .interests-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .interest-item {
+      background-color: var(--light-bg);
+      border-radius: 10px;
+      padding: 30px;
+      text-align: center;
+      transition: 0.3s ease;
+      box-shadow: 0 5px 15px rgba(255, 215, 0, 0.05);
+    }
+    .interest-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(255, 215, 0, 0.15);
+    }
+    .interest-icon {
+      font-size: 2.5rem;
+      color: var(--yellow);
+      margin-bottom: 15px;
+    }
+    .interest-item h3 {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      color: var(--yellow);
+    }
+    .interest-item p {
+      font-size: 0.95rem;
+      color: var(--gray);
+      margin-bottom: 20px;
+    }
+    .interest-item a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: var(--yellow);
+      color: #000;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+    .interest-item a:hover {
+      background-color: var(--yellow-dark);
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .navbar ul {
+        flex-direction: column;
+        width: 100%;
+        padding-top: 10px;
+      }
+      .navbar ul li {
+        width: 100%;
+      }
+      .navbar ul li a {
+        display: block;
+        padding: 10px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Keerthana</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Projects Section -->
+  <section class="interests-section">
+    <h2 class="section-title">My <span>Projects</span></h2>
+    <div class="interests-grid">
+
+      <div class="interest-item">
+        <div class="interest-icon"><i class="fas fa-table-tennis"></i></div>
+        <h3>AI-Powered Blogging Website using MERN Stack</h3>
+        <p>A dynamic blog platform where users can read blogs and post comments. Admin login is secured with a fixed username and password. 
+            When a new blog is added, the content is automatically generated using AI, making content creation effortless and intelligent.</p>
+        <a href="blog.png" target="_blank">View My Project</a>
+      </div>
+
+      <div class="interest-item">
+        <div class="interest-icon"><i class="fas fa-brain"></i></div>
+        <h3>Recipe Recommendation System</h3>
+        <p>A smart web application that suggests recipes based on user-input ingredients.
+             Built using React for the frontend and Flask with a machine learning model on the backend, it helps users discover dishes easily with AI-powered suggestions.</p>
+        <a href="recipe.png" target="_blank">View My Project</a>
+      </div>
+
+      
+
+      <div class="interest-item">
+        <div class="interest-icon"><i class="fas fa-book-open"></i></div>
+        <h3>Gen AI Projects</h3>
+        <p>As part of my Generative AI project suite, I developed an intelligent application that combines multiple NLP-based tools to solve real-world problems.
+            Translator: Converts text between languages using transformer models.
+            Patient Chatbot: Answers health queries like “What are the symptoms of corona?” using stored medical data.
+            BERT Predictor: Suggests the next word in a sentence based on context.
+        </p>
+        <a href="patient chating.mp4" target="_blank">View My Project</a>
+      </div>
+
+    </div> 
+  </section>
+
+</body>
+</html>
